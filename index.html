@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        @keyframes fadein {
+            0%{
+                opacity: 0;
+                transform: translateY(20px)
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px)
+            }
+        }
+        body{
+            background-image: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/arches.png)
+        }
+        h1{
+            font-family: Merriweather;
+            font-size: 3em;
+            animation: fadein 0.3s;
+            margin-top: 150px;
+        }
+        .loading{
+            animation: fadein 0.3s;
+        }
+        .card{
+            animation: fadein 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 class="text-center">Random Quote</h1>
+        <div class="container my-5 text-center">
+            <button @click="getNew" class="btn btn-success">New Quotes</button>
+            <div v-show="loading" class="loading text-center mt-5">Loading.....</div>
+            <div class="card my-5" v-if="quote && quote.length > 0 ">
+                <div class="card-body">
+                    <blockquote>{{quote[0].quote}}</blockquote>
+                    <p>{{quote[0].author}}</p>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="script.js"></script>
+</body>
+</html>
