@@ -25,7 +25,5 @@ var app = new Vue({
         });
         }
     },
-    mounted: function(){
-        
-    }
+  
 })
